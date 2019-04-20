@@ -89,6 +89,7 @@ class App extends Component {
         <Todos todos={this.state.list} deleteTodo={this.deleteTodo}/>
         <AddTODO addTodo={this.addTodo}/>
         <button className="waves-effect waves-light btn-small" onClick={this.clearAll}>Done All</button>
+        <br/>
         <HistoryTodos historyTodos={this.state.historyList}/>
         <button className="waves-effect waves-light btn-small" onClick={this.clearAllHistory}>Clear History</button>
       </div>
