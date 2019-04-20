@@ -36,6 +36,20 @@ html {
   }
 }
 
+.history {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Berlin Sans FB";
+  color: lightgrey;
+}
+
+.historyTodo {
+  font-size: 20px;
+  font-family: "Berlin Sans FB";
+  text-decoration: line-through;
+  color: lightgrey;
+}
+
 .todo {
   font-size: 20px;
   font-family: "Berlin Sans FB";

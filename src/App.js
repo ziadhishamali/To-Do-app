@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
 import Todos from './Todos.js';
+import HistoryTodos from './HistoryTodos.js';
 import AddTODO from './AddTODO.js';
 import './App.css';
 
 class App extends Component {
 
+  maxId = 0;
+
   state = {
 
-    list: [
-
-    ]
+    list: [],
+    historyList: []
 
   };
 
   componentDidMount(){
     let list = localStorage.list;
+    let historyList = localStorage.historyList;
     console.log(list);
     if (list !== undefined) {
       this.setState({
-        list: JSON.parse(list)
+        list: JSON.parse(list),
       })
+    }
+
+    if (historyList !== undefined) {
+        this.setState({
+            historyList: JSON.parse(historyList)
+        })
     }
   };
 
@@ -28,15 +37,22 @@ class App extends Component {
     const list = this.state.list.filter(todo => {
       return todo.id !== id;
     });
+    const historyList = this.state.list.filter(todo => {
+        return todo.id === id;
+    }).concat(this.state.historyList);
+    //historyList.concat(this.state.historyList);
     localStorage.setItem('list', JSON.stringify(list));
+    localStorage.setItem('historyList', JSON.stringify(historyList));
     console.log(localStorage);
     this.setState({
-      list
+      list,
+      historyList
     })
   };
 
   addTodo = (c) => {
-      let id = this.state.list.length + 1;
+      let id = this.maxId + 1;
+      this.maxId++;
       //let content = prompt("add a todo:", "todo");
       let content = c;
       console.log("id: " + id + ", content: " + content);
@@ -48,10 +64,21 @@ class App extends Component {
   };
 
   clearAll = () => {
-    localStorage.clear();
-    let list = [];
+    const list = [];
+    localStorage.setItem('list', JSON.stringify(list));
+    const historyList = this.state.list.concat(this.state.historyList);
+    localStorage.setItem('historyList', JSON.stringify(historyList));
     this.setState({
-      list
+      list,
+      historyList
+    })
+  };
+
+  clearAllHistory = () => {
+    let historyList = [];
+    localStorage.setItem('historyList', JSON.stringify(historyList));
+    this.setState({
+        historyList
     })
   };
 
@@ -61,7 +88,9 @@ class App extends Component {
         <h2 className="center blue-text">Todo's</h2>
         <Todos todos={this.state.list} deleteTodo={this.deleteTodo}/>
         <AddTODO addTodo={this.addTodo}/>
-        <button className="waves-effect waves-light btn-small" onClick={this.clearAll}>Clear All</button>
+        <button className="waves-effect waves-light btn-small" onClick={this.clearAll}>Done All</button>
+        <HistoryTodos historyTodos={this.state.historyList}/>
+        <button className="waves-effect waves-light btn-small" onClick={this.clearAllHistory}>Clear History</button>
       </div>
     );
   }
