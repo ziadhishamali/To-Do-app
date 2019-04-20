@@ -36,22 +36,61 @@ html {
   }
 }
 
+.button {
+  font-family: "Berlin Sans FB";
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #00B7FF;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  padding: 8px;
+  margin-bottom: 50px;
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
+  cursor: pointer;
+  border: 2px solid #00B7FF;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #00B7FF;
+  border: 2px solid #00B7FF;
+  border-radius: 10%;
+  color: white;
+}
+
+.button:active {
+  background-color: #05e1ff;
+  border: 2px solid #05e1ff;
+  border-radius: 10%;
+  color: white;
+}
+
+.button:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
 .history {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 15px;
   font-family: "Berlin Sans FB";
   color: lightgrey;
 }
 
 .historyTodo {
-  font-size: 20px;
+  font-size: 15px;
   font-family: "Berlin Sans FB";
   text-decoration: line-through;
-  color: lightgrey;
+  color: #8e8e8e;
 }
 
 .todo {
-  font-size: 20px;
+  font-size: 15px;
   font-family: "Berlin Sans FB";
 }
 
@@ -65,8 +104,14 @@ html {
 
 .center {
   font-family: "Berlin Sans FB";
+  font-size: 15px;
 }
 
 .oh-yeah {
   font-family: "Berlin Sans FB";
+  font-size: 15px;
+}
+
+.header {
+  font-size: 50px;
 }

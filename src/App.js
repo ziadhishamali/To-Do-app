@@ -85,13 +85,12 @@ class App extends Component {
   render() {
     return (
       <div className="todo-app container">
-        <h2 className="center blue-text">Todo's</h2>
+        <h2 className="center blue-text header">Todo's</h2>
         <Todos todos={this.state.list} deleteTodo={this.deleteTodo}/>
         <AddTODO addTodo={this.addTodo}/>
-        <button className="waves-effect waves-light btn-small" onClick={this.clearAll}>Done All</button>
-        <br/>
+        <input type="button" className="button" onClick={this.clearAll} value="Done All" />
         <HistoryTodos historyTodos={this.state.historyList}/>
-        <button className="waves-effect waves-light btn-small" onClick={this.clearAllHistory}>Clear History</button>
+        <input type="button" className="button" onClick={this.clearAllHistory} value="Clear History"/>
       </div>
     );
   }
