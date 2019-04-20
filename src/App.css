@@ -1,0 +1,72 @@
+html {
+  zoom: 150%;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.history {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Berlin Sans FB";
+  color: lightgrey;
+}
+
+.historyTodo {
+  font-size: 20px;
+  font-family: "Berlin Sans FB";
+  text-decoration: line-through;
+  color: lightgrey;
+}
+
+.todo {
+  font-size: 20px;
+  font-family: "Berlin Sans FB";
+}
+
+.todo:hover {
+  text-decoration: line-through;
+}
+
+.blue-text {
+  font-family: "Berlin Sans FB";
+}
+
+.center {
+  font-family: "Berlin Sans FB";
+}
+
+.oh-yeah {
+  font-family: "Berlin Sans FB";
+}
