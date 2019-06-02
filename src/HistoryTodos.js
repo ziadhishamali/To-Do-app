@@ -1,23 +1,23 @@
 import React from 'react';
 
-const HistoryTodos = ({historyTodos}) => {
+const HistoryTodos = ({historyTodos, historyRestore}) => {
 
     const historyTodosList = historyTodos.length ? (
 
         historyTodos.map(historyTodo => {
             return (
                 <div key={historyTodo.id} className="historyTodo collection-item">
-                    <span >{historyTodo.content}</span>
+                    <span onClick={() => {historyRestore(historyTodo.id)}}>{historyTodo.content}</span>
                 </div>
             )
         })
 
     ) : (
-        <p className="center history">The history is empty !!</p>
+        <p className="center history">The history is empty <span className="comma">!!</span></p>
     );
 
     return (
-        <div className="collection">
+        <div className="todos">
             {historyTodosList}
         </div>
     );

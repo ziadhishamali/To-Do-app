@@ -23,9 +23,9 @@ class AddTODO extends Component {
 
     render() {
         return (
-            <div>
+            <div className="todos">
                 <form onSubmit={this.changeContent}>
-                    <input value={this.state.content} className="oh-yeah" placeholder="Add a todo" onChange={this.updateContent}/>
+                    <input value={this.state.content} className="addTodo" placeholder="Add a todo" onChange={this.updateContent}/>
                 </form>
             </div>
         )
